@@ -41,30 +41,38 @@ The [_L1_ norm][l1norm] is defined as
 
 <!-- /.intro -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/blas-base-sasum
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
--   If you are using Deno, visit the [`deno` branch][deno-url].
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
+To use in Observable,
+
 ```javascript
-var sasum = require( '@stdlib/blas-base-sasum' );
+sasum = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-sasum@umd/browser.js' )
+```
+
+To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
+
+```javascript
+var sasum = require( 'path/to/vendor/umd/blas-base-sasum/index.js' )
+```
+
+To include the bundle in a webpage,
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-sasum@umd/browser.js"></script>
+```
+
+If no recognized module system is present, access bundle contents via the global scope:
+
+```html
+<script type="text/javascript">
+(function () {
+    window.sasum;
+})();
+</script>
 ```
 
 #### sasum( N, x, stride )
@@ -175,11 +183,16 @@ sum = sasum.ndarray( 3, x, -1, x.length-1 );
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var round = require( '@stdlib/math-base-special-round' );
-var randu = require( '@stdlib/random-base-randu' );
-var Float32Array = require( '@stdlib/array-float32' );
-var sasum = require( '@stdlib/blas-base-sasum' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-sasum@umd/browser.js"></script>
+<script type="text/javascript">
+(function () {
 
 var rand;
 var sign;
@@ -198,6 +211,11 @@ for ( i = 0; i < x.length; i++ ) {
     x[ i ] = sign * rand;
 }
 console.log( sasum( x.length, x, 1 ) );
+
+})();
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -298,13 +316,13 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 [l1norm]: http://en.wikipedia.org/wiki/Norm_%28mathematics%29
 
-[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs
+[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs/tree/umd
 
 <!-- <related-links> -->
 
-[@stdlib/blas/base/dasum]: https://github.com/stdlib-js/blas-base-dasum
+[@stdlib/blas/base/dasum]: https://github.com/stdlib-js/blas-base-dasum/tree/umd
 
-[@stdlib/blas/base/gasum]: https://github.com/stdlib-js/blas-base-gasum
+[@stdlib/blas/base/gasum]: https://github.com/stdlib-js/blas-base-gasum/tree/umd
 
 <!-- </related-links> -->
 
