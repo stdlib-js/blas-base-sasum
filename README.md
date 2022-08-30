@@ -48,7 +48,7 @@ The [_L1_ norm][l1norm] is defined as
 ## Usage
 
 ```javascript
-import sasum from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-sasum@deno/mod.js';
+import sasum from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-sasum@v0.0.7-deno/mod.js';
 ```
 
 #### sasum( N, x, stride )
@@ -163,7 +163,7 @@ sum = sasum.ndarray( 3, x, -1, x.length-1 );
 import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@deno/mod.js';
 import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@deno/mod.js';
 import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
-import sasum from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-sasum@deno/mod.js';
+import sasum from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-sasum@v0.0.7-deno/mod.js';
 
 var rand;
 var sign;
