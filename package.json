@@ -109,6 +109,9 @@
     "float32",
     "float32array"
   ],
+  "__stdlib__": {
+    "wasm": false
+  },
   "funding": {
     "type": "opencollective",
     "url": "https://opencollective.com/stdlib"
