@@ -56,30 +56,14 @@ The [_L1_ norm][l1norm] is defined as
 
 <!-- /.intro -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/blas-base-sasum
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
--   If you are using Deno, visit the [`deno` branch][deno-url].
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-var sasum = require( '@stdlib/blas-base-sasum' );
+import sasum from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-sasum@esm/index.mjs';
 ```
 
 #### sasum( N, x, stride )
@@ -87,7 +71,7 @@ var sasum = require( '@stdlib/blas-base-sasum' );
 Computes the sum of [absolute values][@stdlib/math/base/special/abs].
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
 
 var x = new Float32Array( [ -2.0, 1.0, 3.0, -5.0, 4.0, 0.0, -1.0, -3.0 ] );
 
@@ -104,7 +88,7 @@ The function has the following parameters:
 The `N` and `stride` parameters determine which elements in `x` are used to compute the sum. For example, to sum every other value,
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
 
 var x = new Float32Array( [ -2.0, 1.0, 3.0, -5.0, 4.0, 0.0, -1.0, -3.0 ] );
 
@@ -115,7 +99,7 @@ var sum = sasum( 4, x, 2 );
 Note that indexing is relative to the first index. To introduce an offset, use [`typed array`][mdn-typed-array] views.
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
 
 // Initial array:
 var x0 = new Float32Array( [ 1.0, -2.0, 3.0, -4.0, 5.0, -6.0 ] );
@@ -135,7 +119,7 @@ If either `N` or `stride` is less than or equal to `0`, the function returns `0`
 Computes the sum of [absolute values][@stdlib/math/base/special/abs] using alternative indexing semantics.
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
 
 var x = new Float32Array( [ -2.0, 1.0, 3.0, -5.0, 4.0, 0.0, -1.0, -3.0 ] );
 
@@ -150,7 +134,7 @@ The function has the following additional parameters:
 While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying buffer, the `offset` parameter supports indexing semantics based on a starting index. For example, to sum the last three elements,
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@esm/index.mjs';
 
 var x = new Float32Array( [ 1.0, -2.0, 3.0, -4.0, 5.0, -6.0 ] );
 
@@ -183,9 +167,14 @@ sum = sasum.ndarray( 3, x, -1, x.length-1 );
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
-var sasum = require( '@stdlib/blas-base-sasum' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="module">
+
+import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@esm/index.mjs';
+import sasum from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-sasum@esm/index.mjs';
 
 var opts = {
     'dtype': 'float32'
@@ -195,6 +184,10 @@ console.log( x );
 
 var out = sasum( x.length, x, 1 );
 console.log( out );
+
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -225,7 +218,7 @@ console.log( out );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -295,13 +288,13 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 [l1norm]: https://en.wikipedia.org/wiki/Norm_%28mathematics%29
 
-[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs
+[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs/tree/esm
 
 <!-- <related-links> -->
 
-[@stdlib/blas/base/dasum]: https://github.com/stdlib-js/blas-base-dasum
+[@stdlib/blas/base/dasum]: https://github.com/stdlib-js/blas-base-dasum/tree/esm
 
-[@stdlib/blas/base/gasum]: https://github.com/stdlib-js/blas-base-gasum
+[@stdlib/blas/base/gasum]: https://github.com/stdlib-js/blas-base-gasum/tree/esm
 
 <!-- </related-links> -->
 
