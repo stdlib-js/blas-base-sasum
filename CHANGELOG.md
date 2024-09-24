@@ -4,12 +4,13 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2024-09-21)
+## Unreleased (2024-09-24)
 
 <section class="features">
 
 ### Features
 
+-   [`126c898`](https://github.com/stdlib-js/stdlib/commit/126c89855ae2df8c6db72ca48e138f6b45a179b0) - refactor JavaScript implementation and add C `ndarray` implementation for `blas/base/dasum` [(#2942)](https://github.com/stdlib-js/stdlib/pull/2942)
 -   [`d93e862`](https://github.com/stdlib-js/stdlib/commit/d93e862d5d5919a73677b3c66e10e5f0bfd99ea0) - refactor JavaScript implementation and add C `ndarray` implementation for `blas/base/sasum` [(#2926)](https://github.com/stdlib-js/stdlib/pull/2926)
 
 </section>
@@ -22,6 +23,7 @@
 
 <details>
 
+-   [`126c898`](https://github.com/stdlib-js/stdlib/commit/126c89855ae2df8c6db72ca48e138f6b45a179b0) - **feat:** refactor JavaScript implementation and add C `ndarray` implementation for `blas/base/dasum` [(#2942)](https://github.com/stdlib-js/stdlib/pull/2942) _(by Aman Bhansali)_
 -   [`d93e862`](https://github.com/stdlib-js/stdlib/commit/d93e862d5d5919a73677b3c66e10e5f0bfd99ea0) - **feat:** refactor JavaScript implementation and add C `ndarray` implementation for `blas/base/sasum` [(#2926)](https://github.com/stdlib-js/stdlib/pull/2926) _(by Aman Bhansali, Athan Reines)_
 -   [`2777e4b`](https://github.com/stdlib-js/stdlib/commit/2777e4be161869d09406e3b17947d24c64b47af2) - **bench:** resolve lint errors in benchmarks _(by Athan Reines)_
 
