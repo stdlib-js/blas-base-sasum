@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-09-10)
+## Unreleased (2025-12-05)
 
 <section class="features">
 
@@ -33,6 +33,7 @@
 
 <details>
 
+-   [`67088b9`](https://github.com/stdlib-js/stdlib/commit/67088b9007a9543c3672f6b3c3710bd12f315501) - **bench:** refactor to use dynamic memory allocation in `blas/base/sasum` [(#8817)](https://github.com/stdlib-js/stdlib/pull/8817) _(by Krishna Awasthi, Athan Reines)_
 -   [`82be305`](https://github.com/stdlib-js/stdlib/commit/82be305dfecc75ac71e18dbed841aa6f8022e7be) - **docs:** clean-up TSDoc examples _(by Philipp Burckhardt)_
 -   [`d559fd7`](https://github.com/stdlib-js/stdlib/commit/d559fd70de9ec9b1d72d22543876f380e4062c69) - **refactor:** update include header guards for single precision real packages [(#7710)](https://github.com/stdlib-js/stdlib/pull/7710) _(by Shabareesh Shetty)_
 -   [`e039f2a`](https://github.com/stdlib-js/stdlib/commit/e039f2a6f7ff1b4141dba2d0f5a2fb8a03d7a9b8) - **fix:** consistently use constants instead of hardcoded numbers in unrolled BLAS loops _(by Philipp Burckhardt)_
@@ -53,10 +54,11 @@
 
 ### Contributors
 
-A total of 4 people contributed to this release. Thank you to the following contributors:
+A total of 5 people contributed to this release. Thank you to the following contributors:
 
 -   Aman Bhansali
 -   Athan Reines
+-   Krishna Awasthi
 -   Philipp Burckhardt
 -   Shabareesh Shetty
 
