@@ -56,32 +56,14 @@ The [_L1_ norm][l1norm] is defined as
 
 <!-- /.intro -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/blas-base-sasum
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
--   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-var sasum = require( '@stdlib/blas-base-sasum' );
+import sasum from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-sasum@deno/mod.js';
 ```
 
 #### sasum( N, x, stride )
@@ -89,7 +71,7 @@ var sasum = require( '@stdlib/blas-base-sasum' );
 Computes the sum of [absolute values][@stdlib/math/base/special/abs].
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
 
 var x = new Float32Array( [ -2.0, 1.0, 3.0, -5.0, 4.0, 0.0, -1.0, -3.0 ] );
 
@@ -106,7 +88,7 @@ The function has the following parameters:
 The `N` and `stride` parameters determine which elements in `x` are used to compute the sum. For example, to sum every other value,
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
 
 var x = new Float32Array( [ -2.0, 1.0, 3.0, -5.0, 4.0, 0.0, -1.0, -3.0 ] );
 
@@ -117,7 +99,7 @@ var sum = sasum( 4, x, 2 );
 Note that indexing is relative to the first index. To introduce an offset, use [`typed array`][mdn-typed-array] views.
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
 
 // Initial array:
 var x0 = new Float32Array( [ 1.0, -2.0, 3.0, -4.0, 5.0, -6.0 ] );
@@ -137,7 +119,7 @@ If either `N` is less than or equal to `0`, the function returns `0`.
 Computes the sum of [absolute values][@stdlib/math/base/special/abs] using alternative indexing semantics.
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
 
 var x = new Float32Array( [ -2.0, 1.0, 3.0, -5.0, 4.0, 0.0, -1.0, -3.0 ] );
 
@@ -152,7 +134,7 @@ The function has the following additional parameters:
 While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying buffer, the `offset` parameter supports indexing semantics based on a starting index. For example, to sum the last three elements,
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
 
 var x = new Float32Array( [ 1.0, -2.0, 3.0, -4.0, 5.0, -6.0 ] );
 
@@ -186,8 +168,8 @@ sum = sasum.ndarray( 3, x, -1, x.length-1 );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
-var sasum = require( '@stdlib/blas-base-sasum' );
+import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@deno/mod.js';
+import sasum from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-sasum@deno/mod.js';
 
 var opts = {
     'dtype': 'float32'
@@ -205,126 +187,7 @@ console.log( out );
 
 <!-- C interface documentation. -->
 
-* * *
 
-<section class="c">
-
-## C APIs
-
-<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
-
-<section class="intro">
-
-</section>
-
-<!-- /.intro -->
-
-<!-- C usage documentation. -->
-
-<section class="usage">
-
-### Usage
-
-```c
-#include "stdlib/blas/base/sasum.h"
-```
-
-#### c_sasum( N, \*X, stride )
-
-Computes the sum of [absolute values][@stdlib/math/base/special/abs].
-
-```c
-const float x[] = { 1.0f, -2.0f, 3.0f, -4.0f, 5.0f, -6.0f, 7.0f, -8.0f };
-
-float sum = c_sasum( 8, x, 1 );
-// returns 36.0f
-```
-
-The function accepts the following arguments:
-
--   **N**: `[in] CBLAS_INT` number of indexed elements.
--   **X**: `[in] float*` input array.
--   **stride**: `[in] CBLAS_INT` index increment for `X`.
-
-```c
-float c_sasum( const CBLAS_INT N, const float *X, const CBLAS_INT stride );
-```
-
-#### c_sasum_ndarray( N, \*X, stride, offset )
-
-Computes the sum of [absolute values][@stdlib/math/base/special/abs] using alternative indexing semantics.
-
-```c
-const float x[] = { 1.0f, -2.0f, 3.0f, -4.0f, 5.0f, -6.0f, 7.0f, -8.0f };
-
-float sum = c_sasum_ndarray( 8, x, -1, 7 );
-// returns 36.0f
-```
-
-The function accepts the following arguments:
-
--   **N**: `[in] CBLAS_INT` number of indexed elements.
--   **X**: `[in] float*` input array.
--   **stride**: `[in] CBLAS_INT` index increment for `X`.
--   **offset**: `[in] CBLAS_INT` starting index for `X`.
-
-```c
-float c_sasum_ndarray( const CBLAS_INT N, const float *X, const CBLAS_INT stride, const CBLAS_INT offset );
-```
-
-</section>
-
-<!-- /.usage -->
-
-<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
-
-<section class="notes">
-
-</section>
-
-<!-- /.notes -->
-
-<!-- C API usage examples. -->
-
-<section class="examples">
-
-### Examples
-
-```c
-#include "stdlib/blas/base/sasum.h"
-#include <stdio.h>
-
-int main( void ) {
-    // Create a strided array:
-    const float x[] = { 1.0f, -2.0f, 3.0f, -4.0f, 5.0f, -6.0f, 7.0f, -8.0f };
-
-    // Specify the number of elements:
-    const int N = 8;
-
-    // Specify a stride:
-    const int stride = 1;
-
-    // Compute the sum of absolute values:
-    float sum = c_sasum( N, x, stride );
-
-    // Print the result:
-    printf( "sum: %f\n", sum );
-
-    // Compute the sum of absolute values:
-    sum = c_sasum_ndarray( N, x, -stride, N-1 );
-
-    // Print the result:
-    printf( "sum: %f\n", sum );
-}
-```
-
-</section>
-
-<!-- /.examples -->
-
-</section>
-
-<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -350,7 +213,7 @@ int main( void ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -423,13 +286,13 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [l1norm]: https://en.wikipedia.org/wiki/Norm_%28mathematics%29
 
-[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs
+[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs/tree/deno
 
 <!-- <related-links> -->
 
-[@stdlib/blas/base/dasum]: https://github.com/stdlib-js/blas-base-dasum
+[@stdlib/blas/base/dasum]: https://github.com/stdlib-js/blas-base-dasum/tree/deno
 
-[@stdlib/blas/base/gasum]: https://github.com/stdlib-js/blas-base-gasum
+[@stdlib/blas/base/gasum]: https://github.com/stdlib-js/blas-base-gasum/tree/deno
 
 <!-- </related-links> -->
 
